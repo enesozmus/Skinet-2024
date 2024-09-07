@@ -32,6 +32,8 @@ Infrastructure → dotnet add reference ../Core
 
 dotnet restore
 dotnet build
+dotnet dev-certs https
+dotnet dev-certs https --trust
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
