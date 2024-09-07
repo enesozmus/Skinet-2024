@@ -35,6 +35,13 @@ dotnet build
 dotnet dev-certs https
 dotnet dev-certs https --trust
 
+dotnet tool install --global dotnet-ef --version 8.0.8
+
+dotnet ef migrations add InitialCreate -s API -p Infrastructure
+dotnet ef migrations remove -s API -p Infrastructure
+dotnet ef migrations remove --force -s API -p Infrastructure
+dotnet ef database update -s API -p Infrastructure
+
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
