@@ -8,8 +8,11 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class ProductsController(IProductRepository repo) : ControllerBase
 {
+    // [HttpGet]
+    // public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts() => Ok(await repo.GetProductsAsync());
+
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts() => Ok(await repo.GetProductsAsync());
+    public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts(string? brand, string? type, string? sort) => Ok(await repo.GetProductsByFiltersAsync(brand, type, sort));
 
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Product>> GetProduct(int id)
