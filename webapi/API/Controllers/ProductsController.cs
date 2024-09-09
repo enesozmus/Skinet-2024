@@ -7,6 +7,7 @@ namespace API.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class ProductsController(IProductRepository repo) : ControllerBase
+// public class ProductsController(IGenericRepository<Product> repo) : ControllerBase
 {
     // [HttpGet]
     // public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts() => Ok(await repo.GetProductsAsync());
