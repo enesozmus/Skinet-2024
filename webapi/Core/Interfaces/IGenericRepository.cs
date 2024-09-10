@@ -12,4 +12,10 @@ public interface IGenericRepository<T> where T : BaseEntity
     void Remove(T entity);
     Task<bool> IsSaveAllAsync();
     bool Exists(int id);
+
+    Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+    Task<T?> GetEntityWithSpec(ISpecification<T> spec);
+    
+    Task<IReadOnlyList<TResult>> ListAsync<TResult>(ISpecification<T, TResult> spec);
+    Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec);
 }
