@@ -50,4 +50,6 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
 dotnet new gitignore
+
+ng g c layout/header2 --dry-run --skip-tests
 ```
